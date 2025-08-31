@@ -1,0 +1,226 @@
+/* Page Background */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #0a0a0a);
+  color: #f0f0f0;  /* light text for readability */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Glass Dark Effect */
+nav.navbar {
+  background: rgba(0, 0, 0, 0.6);  /* semi-dark transparent */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Gradient brand name (blue-cyan glow) */
+.brand-gradient {
+  background: linear-gradient(45deg, #977DFF, #2b24e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  display: inline-block; 
+  font-weight: 900;
+  letter-spacing: 1px;
+  /* text-shadow: 0 0 8px rgba(0,123,255,0.5); */
+}
+
+/* Navbar links */
+.nav-link {
+  position: relative;
+  color: #f0f0f0 !important;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+/* Hover underline animation */
+.custom-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #2b24e0;
+  transition: width 0.3s ease-in-out;
+}
+.custom-link:hover::after {
+  width: 100%;
+}
+.custom-link:hover {
+  color: #2b24e0 !important;
+}
+
+/* Responsive brand size */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  .nav-link {
+    padding: 8px 0;
+  }
+}
+
+/* Navbar toggler dark fix */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* About ME */
+.aboutme{
+      background: linear-gradient(45deg, #2b24e0, #6040e0);
+
+}
+.gradient-text {
+  background: linear-gradient(45deg, #160078, #010030);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 900;
+}
+
+.brand-gradient2 {
+  background: linear-gradient(45deg, #977DFF, #2b24e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+    text-align: center;
+  font-weight: 800;
+  letter-spacing: 1px;
+  /* text-shadow: 0 0 8px rgba(0,123,255,0.5); */
+}
+/* Typewriter Effect */
+.typewriter {
+  color: white;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #fff; /* Cursor */
+  font-family: monospace;
+  font-size: 2.5rem;
+  animation: typing 4s steps(13, end) infinite,
+             blink .7s step-end infinite;
+}
+
+/* Typing + Deleting effect */
+@keyframes typing {
+  0% { width: 0; }          /* Start typing */
+  40% { width: 13ch; }      /* Fully typed */
+  60% { width: 13ch; }      /* Hold */
+  100% { width: 0; }        /* Delete */
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+
+    /* Projects */
+.project-card {
+  background: #0d1117;
+  border: none;
+  color: var(--text-dark);
+  transition: transform 0.4s, box-shadow 0.4s;
+  overflow: hidden;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px var(--accent);
+}
+
+.card2, .card3 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px; 
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  padding: 20px;
+  color: #fff;
+  z-index: 1;
+}
+
+.card2::before, .card3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.card-title, .card-text {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.btn-custom, .btn-primary {
+  background: linear-gradient(45deg, #007bff, #00d4ff);
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: transform 0.3s ease-in-out;
+}
+.btn-custom:hover, .btn-primary:hover {
+  transform: scale(1.05);
+}
+
+#projects .row {
+  justify-content: center; 
+}
+
+
+/* Skills Section */
+.skill-card {
+  background: rgba(20, 20, 20, 0.75);
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.skill-card img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+}
+
+.skill-card h5 {
+  margin: 0;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px #00d4ff;
+}
+
+
